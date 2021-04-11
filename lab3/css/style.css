@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image: linear-gradient(45deg, #e9c8ff 0%, #b984ff 100%);
+  font-family: "Montserrat", sans-serif;
+}
+
+header,
+form {
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.7rem;
+  font-size: 1.3rem;
+  border: none;
+  background: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+form input {
+  width: 25vw;
+}
+
+form button {
+  color: #b984ff;
+}
+
+i {
+  pointer-events: none;
+}
+
+#task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: gray;
+  opacity: 30%; */
+}
+
+#task-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 0.5rem;
+}
+
+.task-item {
+  pointer-events: none;
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.task-completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.date-completed {
+  pointer-events: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: green;
+}
+
+.remove-task {
+  cursor: pointer;
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 0.3rem;
+}
+
+.undo {
+  border: none;
+  color: white;
+  background-color: gray;
+  pointer-events: none;
+}
+
+.undo-active {
+  cursor: pointer;
+  opacity: 100%;
+  background-color: aqua;
+  pointer-events: auto;
+}
+
+#modal {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 40%;
+  height: 5rem;
+  left: 30vw;
+  top: 20vh;
+  text-align: center;
+}
+
+.task-not-found {
+  display: none;
+}
