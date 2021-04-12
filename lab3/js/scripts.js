@@ -4,13 +4,15 @@
 // https://www.youtube.com/watch?v=Ttf3CEsEwMQ
 
 
-// selectors
+// variables, selectors
 const addTaskInput = document.getElementById("add-task-input");
 const searchTasksInput = document.getElementById("search-tasks");
 const addTaskButton = document.getElementById("add-task-button");
 const taskList = document.getElementById("task-list");
 const undoTaskButton = $(".undo")[0];
 let lastRemovedTask = null;
+const caseSensitiveButton = document.getElementById("case-sensitive");
+let caseSensitive = true;
 
 // functions
 function addTask(event) {
@@ -88,16 +90,31 @@ function undoTask(event) {
 }
 
 function searchTasks(event) {
-    const taskName = event.target.value;
+    let taskName = searchTasksInput.value;
     const taskItems = document.getElementsByClassName("task-item");
+    if (!caseSensitive) {
+        taskName = taskName.toUpperCase();
+    }
     for (let item of taskItems) {
-        if (item.innerText.includes(taskName)) {
+        let text = item.innerText;
+        if (!caseSensitive) {
+            text = text.toUpperCase();
+        }
+
+        if (text.includes(taskName)) {
             item.parentNode.classList.remove("task-not-found");
         }
         else {
             item.parentNode.classList.add("task-not-found");
         }
     };
+}
+
+function toggleCaseSensitive(event) {
+    event.preventDefault();
+    caseSensitive = !caseSensitive;
+    caseSensitiveButton.classList.toggle("case-inactive");
+    searchTasks(); // because the search results may change
 }
 
 // event listeners
@@ -108,3 +125,4 @@ $("#modal").click(event => {
     $("#modal").toggle("fast");
 });
 searchTasksInput.addEventListener("input", searchTasks);
+caseSensitiveButton.addEventListener("click", toggleCaseSensitive);

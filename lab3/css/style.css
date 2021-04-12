@@ -120,3 +120,7 @@ i {
 .task-not-found {
   display: none;
 }
+
+.case-inactive {
+  background-color: gray;
+}
