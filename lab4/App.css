@@ -1,0 +1,22 @@
+body {
+  background-image: linear-gradient(90deg, #e9c8ff 0%, #b984ff 100%);
+  font-family: "Montserrat", sans-serif;
+}
+
+input,
+button {
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  margin: 1rem;
+  border: none;
+  background: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-input {
+  float: left;
+}
+
+.student-input {
+  float: left;
+}
