@@ -35,8 +35,7 @@ class SearchBox extends React.Component {
 class AddStudent extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
-    this.state = props;
+
   }
   render() {
     return (
@@ -47,8 +46,8 @@ class AddStudent extends React.Component {
             name="studentName"
             id="student-name"
             placeholder="Your name"
-            onChange={this.state.onNameChange}
-            onKeyDown={this.state.handleEnter}
+            onChange={this.props.onNameChange}
+            onKeyDown={this.props.handleEnter}
           />
         </div>
         <div className="student-input">
@@ -57,8 +56,8 @@ class AddStudent extends React.Component {
             name="studentDesc"
             id="student-desc"
             placeholder="Your description"
-            onChange={this.state.onDescChange}
-            onKeyDown={this.state.handleEnter}
+            onChange={this.props.onDescChange}
+            onKeyDown={this.props.handleEnter}
           />
         </div>
         <div className="student-input">
@@ -67,8 +66,8 @@ class AddStudent extends React.Component {
             name="studentMail"
             id="student-mail"
             placeholder="Your e-mail"
-            onChange={this.state.onMailChange}
-            onKeyDown={this.state.handleEnter}
+            onChange={this.props.onMailChange}
+            onKeyDown={this.props.handleEnter}
           />
         </div>
         <div className="student-input">
@@ -77,8 +76,8 @@ class AddStudent extends React.Component {
             name="studentTags"
             id="student-tags"
             placeholder="Your tags"
-            onChange={this.state.onTagsChange}
-            onKeyDown={this.state.handleEnter}
+            onChange={this.props.onTagsChange}
+            onKeyDown={this.props.handleEnter}
           />
         </div>
         <div style={{ clear: "both" }} />
@@ -103,6 +102,14 @@ const StudentCount = (props) => {
 };
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    // this.handleNameChange = this.handleNameChange.bind(this);
+    // this.handleDescChange = this.handleDescChange.bind(this);
+    // this.handleMailChange = this.handleMailChange.bind(this);
+    // this.handleTagsChange = this.handleTagsChange.bind(this);
+    // this.handleEnter = this.handleEnter.bind(this);
+  }
   state = {
     newStudent: {
       name: null,
@@ -132,7 +139,7 @@ class App extends React.Component {
     ],
   };
 
-  handleNameChange = function (event) {
+  handleNameChange = (event) => {
     this.setState({
       newStudent: {
         name: event.target.value,
@@ -143,7 +150,7 @@ class App extends React.Component {
     });
   };
 
-  handleDescChange = function (event) {
+  handleDescChange = (event) => {
     this.setState({
       newStudent: {
         name: newStudent.name,
@@ -154,7 +161,7 @@ class App extends React.Component {
     });
   };
 
-  handleMailChange = function (event) {
+  handleMailChange = (event) => {
     this.setState({
       newStudent: {
         name: newStudent.name,
@@ -165,7 +172,7 @@ class App extends React.Component {
     });
   };
 
-  handleTagsChange = function (event) {
+  handleTagsChange = (event) => {
     this.setState({
       newStudent: {
         name: newStudent.name,
@@ -176,7 +183,7 @@ class App extends React.Component {
     });
   };
 
-  handleEnter = function (event) {
+  handleEnter = (event) => {
     if (event.code === "Enter") {
       if (
         this.state.newStudent.name === "" ||
@@ -205,7 +212,6 @@ class App extends React.Component {
   };
 
   render() {
-    //todo
     const students = this.state.students.map((student) => (
       <StudentTile
         name={student.name}
@@ -214,10 +220,11 @@ class App extends React.Component {
         tags={student.tags}
       />
     ));
+    //! I have zero idea why the AddStudent doesn't work...
     return (
       <>
         <SearchBox />
-        <AddStudent
+        <AddStudent    
           onNameChange={this.handleNameChange}
           onDescChange={this.handleDescChange}
           onMailChange={this.handleMailChange}
