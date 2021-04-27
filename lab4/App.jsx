@@ -101,21 +101,14 @@ const StudentCount = (props) => {
 };
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    // this.handleNameChange = this.handleNameChange.bind(this);
-    // this.handleDescChange = this.handleDescChange.bind(this);
-    // this.handleMailChange = this.handleMailChange.bind(this);
-    // this.handleTagsChange = this.handleTagsChange.bind(this);
-    // this.handleEnter = this.handleEnter.bind(this);
   }
   state = {
-    newStudent: {
-      name: null,
-      desc: null,
-      mail: null,
-      tags: null,
-    },
+    newStudentName: "",
+    newStudentDesc: "",
+    newStudentMail: "",
+    newStudentTags: "",
     students: [
       {
         name: "Arek",
@@ -140,71 +133,45 @@ class App extends React.Component {
 
   handleNameChange = (event) => {
     this.setState({
-      newStudent: {
-        name: event.target.value,
-        desc: newStudent.desc,
-        mail: newStudent.mail,
-        tags: newStudent.tags,
-      },
+      newStudentName: event.target.value,
     });
   };
 
   handleDescChange = (event) => {
     this.setState({
-      newStudent: {
-        name: newStudent.name,
-        desc: event.target.value,
-        mail: newStudent.mail,
-        tags: newStudent.tags,
-      },
+      newStudentDesc: event.target.value,
     });
   };
 
   handleMailChange = (event) => {
     this.setState({
-      newStudent: {
-        name: newStudent.name,
-        desc: newStudent.desc,
-        mail: event.target.value,
-        tags: newStudent.tags,
-      },
+      newStudentMail: event.target.value,
     });
   };
 
   handleTagsChange = (event) => {
     this.setState({
-      newStudent: {
-        name: newStudent.name,
-        desc: newStudent.desc,
-        mail: newStudent.mail,
-        tags: event.target.value,
-      },
+      newStudentTags: event.target.value,
     });
   };
 
   handleEnter = (event) => {
     if (event.code === "Enter") {
       if (
-        this.state.newStudent.name === "" ||
-        this.state.newStudent.desc === "" ||
-        this.state.newStudent.mail === "" ||
-        this.state.newStudent.tags === ""
+        this.state.newStudentName === "" ||
+        this.state.newStudentDesc === "" ||
+        this.state.newStudentMail === "" ||
+        this.state.newStudentTags === ""
       ) {
         alert("Please enter valid data about yourself.");
       } else {
         this.setState({
           students: this.state.students.concat({
-            name: this.state.newStudent.name,
-            desc: this.state.newStudent.desc,
-            mail: this.state.newStudent.mail,
-            tags: this.state.newStudent.tags,
+            name: this.state.newStudentName,
+            desc: this.state.newStudentDesc,
+            mail: this.state.newStudentMail,
+            tags: this.state.newStudentTags,
           }),
-          newStudent: {
-            name: null,
-            desc: null,
-            mail: null,
-            tags: null,
-          },
         });
       }
     }
@@ -223,12 +190,12 @@ class App extends React.Component {
     return (
       <>
         <SearchBox />
-        <AddStudent    
-          onNameChange={this.handleNameChange}
-          onDescChange={this.handleDescChange}
-          onMailChange={this.handleMailChange}
-          onTagsChange={this.handleTagsChange}
-          handleEnter={this.handleEnter}
+        <AddStudent
+          onNameChange={this.handleNameChange.bind(this)}
+          onDescChange={this.handleDescChange.bind(this)}
+          onMailChange={this.handleMailChange.bind(this)}
+          onTagsChange={this.handleTagsChange.bind(this)}
+          handleEnter={this.handleEnter.bind(this)}
         />
         <StudentCount count={this.state.students.length} />
         <ul>{students}</ul>
