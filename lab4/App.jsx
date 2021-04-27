@@ -35,7 +35,6 @@ class SearchBox extends React.Component {
 class AddStudent extends React.Component {
   constructor(props) {
     super(props);
-
   }
   render() {
     return (
