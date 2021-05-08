@@ -1,6 +1,7 @@
 import "./App.css";
 import { AppBar, Box, Button, Toolbar } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import StudentList from "./components/StudentList";
 function App() {
   return (
     <Router>
@@ -18,9 +19,9 @@ function App() {
 
           <Switch>
             <Route
-            path="/students"
-            // component={() => {}}
-            component={}
+              path="/students"
+              // component={() => {}}
+              component={StudentList}
             />
           </Switch>
         </Box>
