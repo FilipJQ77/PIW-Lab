@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { AppBar, Box, Button, Toolbar } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Box>
+          <AppBar>
+            <Toolbar>
+              <Button>Homepage</Button>
+              <Button>Search students</Button>
+              <Button>Add a student</Button>
+              <Button>Search groups</Button>
+              <Button>Add a group</Button>
+            </Toolbar>
+          </AppBar>
+
+          <Switch>
+            <Route
+            path="/students"
+            // component={() => {}}
+            component={}
+            />
+          </Switch>
+        </Box>
+      </div>
+    </Router>
   );
 }
 
