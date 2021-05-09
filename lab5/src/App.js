@@ -4,6 +4,8 @@ import { AppBar, Box, Button, Toolbar } from "@material-ui/core";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import StudentList from "./components/StudentList";
 import AddStudent from "./components/AddStudent";
+import GroupList from "./components/GroupList";
+import AddGroup from "./components/AddGroup";
 
 const defaultStudents = [
   {
@@ -83,13 +85,13 @@ const App = () => {
               <Route
                 path="/groups"
                 component={() => (
-                  <StudentList groups={groups} setGroups={setGroups} />
+                  <GroupList groups={groups} setGroups={setGroups} />
                 )}
               />
               <Route
-                path="/addGroups"
+                path="/addGroup"
                 component={() => (
-                  <StudentList groups={groups} setGroups={setGroups} />
+                  <AddGroup groups={groups} setGroups={setGroups} />
                 )}
               />
               <Route path="/">
