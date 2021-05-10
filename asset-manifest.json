@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PIW-Lab/lab5/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/PIW-Lab/lab5/static/js/main.ff65fec4.chunk.js",
+    "main.js.map": "/PIW-Lab/lab5/static/js/main.ff65fec4.chunk.js.map",
+    "runtime-main.js": "/PIW-Lab/lab5/static/js/runtime-main.723b851a.js",
+    "runtime-main.js.map": "/PIW-Lab/lab5/static/js/runtime-main.723b851a.js.map",
+    "static/js/2.df839a63.chunk.js": "/PIW-Lab/lab5/static/js/2.df839a63.chunk.js",
+    "static/js/2.df839a63.chunk.js.map": "/PIW-Lab/lab5/static/js/2.df839a63.chunk.js.map",
+    "static/js/3.05da0bca.chunk.js": "/PIW-Lab/lab5/static/js/3.05da0bca.chunk.js",
+    "static/js/3.05da0bca.chunk.js.map": "/PIW-Lab/lab5/static/js/3.05da0bca.chunk.js.map",
+    "index.html": "/PIW-Lab/lab5/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/PIW-Lab/lab5/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.df839a63.chunk.js.LICENSE.txt": "/PIW-Lab/lab5/static/js/2.df839a63.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.723b851a.js",
+    "static/js/2.df839a63.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.ff65fec4.chunk.js"
+  ]
+}
