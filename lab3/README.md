@@ -1,1 +1,1 @@
-# [Lab3: Github Pages](https://filipjq77.github.io/PIW-Lab/lab3/)
+# [Lab3: Github Pages](https://filipjq77.github.io/PIW-Lab/lab3/) <- doesn't work now after lab5

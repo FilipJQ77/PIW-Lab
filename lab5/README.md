@@ -1,4 +1,4 @@
-# [Lab5: Github Pages](https://filipjq77.github.io/PIW-Lab/lab5/)
+# [Lab5: Github Pages](https://filipjq77.github.io/PIW-Lab/)
 
 # Getting Started with Create React App
 
