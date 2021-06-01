@@ -4,22 +4,22 @@ export const Context = createContext()
 
 export default class ContextProvider extends Component {
     state = { 
-        user: "user",
-        logged: false
+        currentUser: "",
+        loggedIn: false
      }
 
-     setUser = (user) => {
-         this.setState({user: user})
+     setCurrentUser = (user) => {
+         this.setState({currentUser: user})
      }
 
-     setLogged = (logged) => {
-         this.setState({logged: logged})
+     setLoggedIn = (logged) => {
+         this.setState({loggedIn: logged})
      }
 
 
     render() { 
         return (  
-            <Context.Provider value={{...this.state, setUser: this.setUser, setLogged: this.setLogged}}>
+            <Context.Provider value={{...this.state, setUser: this.setCurrentUser, setLogged: this.setLoggedIn}}>
                 {this.props.children}
             </Context.Provider>
         );
