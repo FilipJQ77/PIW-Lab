@@ -2,18 +2,16 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { Form, Button } from "react-bootstrap";
-import "./Login.css";
-import { Context } from "../../contexts/Context";
+import "./Register.css";
 
-const Login = () => {
+const Register = () => {
   const [typedNickname, setTypedNickname] = useState();
   const [typedPassword, setTypedPassword] = useState();
-  const [failedLogin, setFailedLogin] = useState(false);
+  const [failedRegister, setFailedRegister] = useState(false);
   const history = useHistory();
-  const { user, setUser, setLogged } = useContext(Context);
 
-  const checkLogin = async () => {
-    const response = await fetch(`/user`, {
+  const register = async () => {
+    const response = await fetch(`/register`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -33,24 +31,22 @@ const Login = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    checkLogin().then((isCorrect) => {
+    register().then((isCorrect) => {
       if (isCorrect === true) {
-        setLogged(true);
-        setUser(typedNickname);
-        history.push("/home");
-      } else setFailedLogin(true);
+        history.push("/login");
+      } else setFailedRegister(true);
     });
   };
 
   return (
     <div>
-      {failedLogin && (
-        <div className="div-failed-login">
-          Nie udało się zalogować. Spróbuj ponownie!
+      {failedRegister && (
+        <div className="div-failed-register">
+          Nie udało się zarejestrować. Spróbuj ponownie!
         </div>
       )}
       <div className="form">
-        <h1>Zaloguj się</h1>
+        <h1>Zarejestruj się</h1>
         <Form onSubmit={onFormSubmit}>
           <Form.Group controlId="form-basic-email">
             <Form.Label>Nazwa użytkownika</Form.Label>
@@ -75,7 +71,7 @@ const Login = () => {
             />
           </Form.Group>
           <Button variant="primary" type="submit">
-            Zaloguj
+            Zarejestruj się
           </Button>
         </Form>
       </div>
@@ -83,4 +79,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

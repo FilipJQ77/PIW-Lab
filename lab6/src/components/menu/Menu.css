@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+}
+.menu-container {
+  flex: 0 0 50%;
+}
+.cart-container {
+  flex: 1;
+  margin-left: 50px;
+}
+
+.order-popup {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.noresponse-popup {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: white;
+  text-align: center;
+  background-color: #dc3545;
+}
+
+.notlogged-popup {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: center;
+  background-color: #ffdc00;
+}

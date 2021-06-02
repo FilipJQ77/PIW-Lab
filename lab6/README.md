@@ -1,3 +1,6 @@
+# I reused my backend from a different course, it's written in Python and the used database is PostgreSQL.
+# Here's how it works locally:
+![Pizzeria](./pizzeria.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
